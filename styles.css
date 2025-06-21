@@ -254,30 +254,72 @@ main {
 /* Publications */
 .publication {
     background: transparent;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-dark-color);
+    padding: 0.5rem;
+    margin: 0.5rem 0.0rem 0.0rem;
 }
 
-.publication-title {
-    font-weight: 600;
-    color: var(--text-color);
+.publication-content {
+    margin: 0.0rem 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.3rem;
+}
+
+.publication-content p {
     margin-bottom: 0.5rem;
 }
 
-.publication-authors {
-    color: var(--text-color);
-    font-style: italic;
-    margin-bottom: 0.3rem;
-    opacity: 0.8;
+/*.publication-content a {*/
+/*    margin-below: 0rem;*/
+/*    color: var(--accent-light-color);*/
+/*    font-weight: 600;*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.publication-content a:hover {*/
+/*    color: var(--accent-dark-color);*/
+/*}*/
+
+.publication-content a {
+    background: var(--primary-light-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
-.publication-venue {
-    color: var(--text-color);
-    font-weight: 500;
-    opacity: 0.9;
+.publication-content a:hover {
+    background: var(--primary-dark-color);
 }
+
+.show-abstract-btn {
+    background: var(--accent-light-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.show-abstract-btn:hover {
+    background: var(--accent-dark-color);
+}
+
+.abstract {
+    margin: 0.3rem 1rem;
+    padding: 0rem;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+}
+
+
 
 /* Join Us Section */
 .join-us {
