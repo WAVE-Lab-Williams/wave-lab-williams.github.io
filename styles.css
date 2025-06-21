@@ -349,6 +349,87 @@ main {
     text-decoration: underline;
 }
 
+/* Person entries for People page */
+.person-entry {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.4rem;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--accent-light-color);
+    border-right: 4px solid var(--accent-light-color);
+}
+
+.person-photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 210px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+
+.person-info {
+    flex: 1;
+}
+
+.person-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark-color);
+    margin-bottom: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.person-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-dark-color);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.person-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Responsive design for person entries */
+@media (max-width: 768px) {
+    .person-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .person-photo {
+        width: 150px;
+        height: auto;
+    }
+
+    .person-name {
+        font-size: 1.1rem;
+    }
+
+    .person-title {
+        font-size: 0.9rem;
+    }
+
+    .person-bio {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+}
+
+
+
 ::-moz-selection { /* Code for Firefox */
   color: #e8e8e8;
   background: var(--accent-dark-color);
