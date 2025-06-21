@@ -330,9 +330,11 @@ footer {
 
     nav ul {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1.0rem;
         text-align: center;
     }
+
+
 
     .intro-text {
         font-size: 1rem;
@@ -340,6 +342,11 @@ footer {
 
     .container {
         padding: 0 15px;
+    }
+
+    .lab-image {
+        height: auto;
+        max-width: 100%;
     }
 }
 
