@@ -1,3 +1,16 @@
+:root {
+    --primary-light-color: #1f542c; /* green */
+    --primary-dark-color: #364639; /* dark green */
+    --accent-light-color: #8499b1; /* light blue */
+    --accent-dark-color: #092e53; /* dark blue */
+    --text-color: #454545; /* dark gray */
+    /*--secondary-color: #2c2928; !* brownish dark gray *!*/
+    --secondary-color: #454545; /* brownish dark gray */
+    /*--secondary-color: #9a988f; !* brownish dark gray *!*/
+    --secondary-light-color: #8f8e89; /* brownish light gray */
+    --background-color: #fffdf6; /* off-white */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +20,11 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.7;
-    color: #454545;
-    background-color: #fffdf7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -19,7 +35,7 @@ body {
 
 /* Header */
 header {
-    background-color: #364639;
+    background-color: var(--primary-dark-color);
     padding: 0.7rem 0 0.7rem 0;
     border-bottom: 1px solid #e0e0e0;
     position: relative;
@@ -32,11 +48,12 @@ header::after {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right,
-        transparent 0%,
-        #364639 20%,
-        #364639 80%,
-        transparent 100%);
+    /*background: linear-gradient(to right,*/
+    /*    transparent 0%,*/
+    /*    var(--primary-dark-color) 20%,*/
+    /*    var(--primary-dark-color) 80%,*/
+    /*    transparent 100%);*/
+    background: black;
     opacity: 0.4;
 }
 
@@ -48,7 +65,7 @@ h1 {
     text-align: center;
     margin-bottom: 0.1rem;
     line-height: 1;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.1px;
 }
 
 h1 b i {
@@ -56,14 +73,14 @@ h1 b i {
     font-style: italic;
 }
 
-h1 b:last-child {
+h1 b {
     font-weight: bold;
     font-style: normal;
 }
 
 .subtitle {
     text-align: center;
-    color: #fffdf6;
+    color: var(--background-color);
     font-size: 1.0rem;
     font-weight: 300;
     margin-top: 0;
@@ -72,9 +89,11 @@ h1 b:last-child {
 
 /* Navigation */
 nav {
-    background-color: #fffdf6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background-color);
     padding: 1rem 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem; /* Add font size control */
 }
 
 nav ul {
@@ -87,11 +106,10 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    /*color: #7499c2;*/ /* light blue */
-    /*color: #143a60;*/ /* dark blue */
-    /*color: #256233; !* green *!*/
-    color: #5b4b46; /* brown */
-
+    /*color: var(--accent-light-color);*/ /* light blue */
+    /*color: var(--accent-dark-color);*/ /* dark blue */
+    /*color: var(--primary-light-color); !* green *!*/
+    color: var(--secondary-light-color);
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
@@ -102,16 +120,16 @@ nav a {
 
 nav a:hover, nav a.active {
     /* green */
-    color: #256233;
-    border-bottom: 2px solid #256233;
+    color: var(--primary-light-color);
+    border-bottom: 2px solid var(--primary-light-color);
 
     /*light blue*/
-    /*color: #7499c2;*/
-    /*border-bottom: 2px solid #7499c2;*/
+    /*color: var(--accent-light-color);*/
+    /*border-bottom: 2px solid var(--accent-light-color);*/
 
     /*dark blue*/
-    /*color: #143a60;*/
-    /*border-bottom: 2px solid #143a60;*/
+    /*color: var(--accent-dark-color);*/
+    /*border-bottom: 2px solid var(--accent-dark-color);*/
 }
 
 /* Page Content */
@@ -127,18 +145,20 @@ nav a:hover, nav a.active {
 
 /* Main Content */
 main {
+    flex: 1; /* This makes main expand to fill available space */
     min-height: 60vh;
 }
 
 /* Section Headers */
 .section-header {
-    background-color: #564641;
-    color: #fffdf6;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
     font-family: 'Helvetica LT Pro', Helvetica, Arial, sans-serif;
-    font-weight: 1000;
-    font-size: 1.2rem;
-    padding: 0.2rem 1.0rem 0.0rem 1.1rem;
-    border-radius: 10px;
+    font-weight: 550;
+    font-size: 1.35rem;
+    line-height: 1;
+    padding: 0.6rem 1.0rem 0.3rem 1.1rem;
+    border-radius: 5px;
     margin: 2rem 0 1.0rem 0;
     text-align: left;
     display: inline-block;
@@ -149,16 +169,16 @@ main {
     line-height: 1.6;
     margin-bottom: 1rem;
     margin-left: 1.25rem;
-    color: #454545;
+    color: var(--text-color);
 }
 
 .intro-text strong,
 .intro-text b {
-    color: #256233;
+    color: var(--primary-light-color);
 }
 
 .intro-text .bold-alt1 {
-    color: #8499b1;
+    color: var(--accent-light-color);
     font-weight: 650;
 }
 
@@ -192,18 +212,24 @@ main {
 }
 
 .news-date {
-    font-weight: 600;
+    font-weight: 650;
+    color: #325b3b;
+}
+
+.news-number {
+    font-weight: 650;
+    font-family: 'Helvetica LT Pro', Helvetica, Arial, sans-serif;
     color: #325b3b;
     margin-right: 0.5rem;
 }
 
 .news-content {
-    color: #454545;
+    color: var(--text-color);
     line-height: 1.7;
 }
 
 .news-content a {
-    color: #8499b1;
+    color: var(--accent-light-color);
     font-weight: 600;
     text-decoration: underline;
 }
@@ -220,70 +246,75 @@ main {
     padding: 1.5rem;
     margin: 1rem 0;
     border-radius: 8px;
-    border-left: 4px solid #092e53;
+    border-left: 4px solid var(--accent-dark-color);
 }
 
 .publication-title {
     font-weight: 600;
-    color: #454545;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
 .publication-authors {
-    color: #454545;
+    color: var(--text-color);
     font-style: italic;
     margin-bottom: 0.3rem;
     opacity: 0.8;
 }
 
 .publication-venue {
-    color: #454545;
+    color: var(--text-color);
     font-weight: 500;
     opacity: 0.9;
 }
 
 /* Join Us Section */
 .join-us {
-    background-color: #8499b1;
-    padding: 0.3rem;
+    background-color: var(--accent-light-color);
+    padding: 0.3rem 0.0rem;
     border-radius: 10px;
     margin-top: 4rem;
     text-align: center;
 }
 
 .join-us p {
-    font-size: 1.1rem;
-    color: #fffdf6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--background-color);
 }
 
 .join-us a {
-    color: #5b4b46;
+    color: var(--accent-dark-color);
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .join-us a:hover {
-    color: #5b4b46;
+    color: #000000;
     text-decoration: underline;
 }
 
 ::-moz-selection { /* Code for Firefox */
   color: #e8e8e8;
-  background: #092e53;
+  background: var(--accent-dark-color);
 }
 
 ::selection {
   color: #e8e8e8;
-  background: #092e53;
+  background: var(--accent-dark-color);
 }
 
 /* Footer */
 footer {
-    background-color: #364639;
-    color: #fffdf6;
+    background-color: var(--primary-dark-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.0rem;
+    font-weight: 300;
+    color: var(--background-color);
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 4rem;
+    padding: 0.1rem 0; /* Increased padding for better appearance */
+    margin-top: 0;
 }
 
 /* Responsive Design */
