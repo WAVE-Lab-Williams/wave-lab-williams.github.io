@@ -191,8 +191,6 @@ main {
     font-weight: 650;
     text-decoration: underline;}
 
-
-
 .lab-image {
     width: 100%;
     max-width: 700px;
@@ -399,6 +397,11 @@ main {
     color: var(--text-color);
     margin: 0;
 }
+
+.person-bio a {
+    color: var(--accent-light-color);
+    font-weight: 650;
+    text-decoration: underline;}
 
 /* Responsive design for person entries */
 @media (max-width: 768px) {
