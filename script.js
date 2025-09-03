@@ -16,6 +16,7 @@ const SharedComponents = {
                     <li><a href="research.html" class="nav-link" data-page="research">Research</a></li>
                     <li><a href="people.html" class="nav-link" data-page="people">People</a></li>
                     <li><a href="publications.html" class="nav-link" data-page="publications">Publications</a></li>
+                    <li><a href="getting-started.html" class="nav-link" data-page="getting-started">Getting Started</a></li>
                     <li><a href="join-us.html" class="nav-link" data-page="join-us">Join Us</a></li>
                 </ul>
             </div>
@@ -46,6 +47,8 @@ function getCurrentPage() {
             return 'people';
         case 'publications.html':
             return 'publications';
+        case 'getting-started.html':
+            return 'getting-started';
         case 'join-us.html':
             return 'join-us';
         default:
